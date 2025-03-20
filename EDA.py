@@ -1,9 +1,5 @@
 """
-Author: Ludwig Scherer
-Date: 03/18/2025
-
-This is the EDA file for our semester project. So far, this file analyzes the Kaggle dataset which can be
-found under: https://www.kaggle.com/datasets/goyaladi/climate-insights-dataset?resource=download&select=climate_change_data.csv
+This is the EDA file. After preparing our datasets, we will explore their structure to decide our next steps
 """
 
 import pandas as pd
