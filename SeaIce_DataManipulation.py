@@ -5,7 +5,15 @@ to the global_monthly_ice.csv
 
 import pandas as pd
 
-# data = pd.read_csv("data/sea_ice.csv", header=0)
+data = pd.read_csv("data/yearly_ice.csv", header=0)
+
+first_year = data.iloc[0]
+
+data["Change_Global"] = data["Extent_Global"] - first_year["Extent_Global"]
+data["Change_North"] = data["Extent_North"] - first_year["Extent_North"]
+data["Change_South"] = data["Extent_South"] - first_year["Extent_South"]
+
+data.to_csv("data/yearly_ice.csv", index=False)
 
 # northern = data[(data["Hemisphere"] == "north")]
 # southern = data[(data["Hemisphere"] == "south")]
@@ -22,12 +30,20 @@ import pandas as pd
 # north_monthly_ice.to_csv("north_monthly_ice.csv", index=False)
 # south_monthly_ice.to_csv("south_monthly_ice.csv", index=False)
 
-north = pd.read_csv("north_monthly_ice.csv", header=0)
-south = pd.read_csv("south_monthly_ice.csv", header=0)
+# north = pd.read_csv("north_monthly_ice.csv", header=0)
+# south = pd.read_csv("south_monthly_ice.csv", header=0)
 
-global_ice = pd.merge(north, south, on=["Year", "Month"], suffixes= ("_North", "_South"))
+# global_ice = pd.merge(north, south, on=["Year", "Month"], suffixes= ("_North", "_South"))
 
-global_ice["Extent_Global"] = global_ice["Extent_North"] + global_ice["Extent_South"]
-global_ice[["Extent_Global", "Extent_North", "Extent_South"]] = global_ice[["Extent_Global", "Extent_North", "Extent_South"]].round(3)
+# global_ice["Extent_Global"] = global_ice["Extent_North"] + global_ice["Extent_South"]
+# global_ice[["Extent_Global", "Extent_North", "Extent_South"]] = global_ice[["Extent_Global", "Extent_North", "Extent_South"]].round(3)
 
-global_ice.to_csv("global_monthtly_ice.csv", index=False)
+# global_ice.to_csv("global_monthtly_ice.csv", index=False)
+
+# global_ice["Date"] = pd.to_datetime(global_ice[["Year","Month"]].assign(Day=1))
+
+# yearly_ice = global_ice.groupby("Year").agg({ # get the averages per year for each column
+#     "Extent_Global": "mean",
+#     "Extent_North": "mean",
+#     "Extent_South": "mean"
+# }).reset_index()
