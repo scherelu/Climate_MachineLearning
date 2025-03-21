@@ -5,7 +5,7 @@ to the global_monthly_ice.csv
 
 import pandas as pd
 
-data = pd.read_csv("data/yearly_ice.csv", header=0)
+data = pd.read_csv("data/monthly_ice.csv", header=0)
 
 first_year = data.iloc[0]
 
@@ -13,7 +13,7 @@ data["Change_Global"] = data["Extent_Global"] - first_year["Extent_Global"]
 data["Change_North"] = data["Extent_North"] - first_year["Extent_North"]
 data["Change_South"] = data["Extent_South"] - first_year["Extent_South"]
 
-data.to_csv("data/yearly_ice.csv", index=False)
+# data.to_csv("data/yearly_ice.csv", index=False)
 
 # northern = data[(data["Hemisphere"] == "north")]
 # southern = data[(data["Hemisphere"] == "south")]
@@ -36,8 +36,7 @@ data.to_csv("data/yearly_ice.csv", index=False)
 # global_ice = pd.merge(north, south, on=["Year", "Month"], suffixes= ("_North", "_South"))
 
 # global_ice["Extent_Global"] = global_ice["Extent_North"] + global_ice["Extent_South"]
-# global_ice[["Extent_Global", "Extent_North", "Extent_South"]] = global_ice[["Extent_Global", "Extent_North", "Extent_South"]].round(3)
-
+# data[["Change_Global", "Change_North", "Change_South"]] = data[["Change_Global", "Change_North", "Change_South"]].round(3)
 # global_ice.to_csv("global_monthtly_ice.csv", index=False)
 
 # global_ice["Date"] = pd.to_datetime(global_ice[["Year","Month"]].assign(Day=1))

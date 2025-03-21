@@ -1,8 +1,16 @@
 import pandas as pd
 
-data = pd.read_csv("data/ave_temp_change_en.csv") 
+data = pd.read_csv("maybe/annual_temp_change.csv")
 
+months = ["January", "February", "March", "April", "May", "June", "July", "August",
+          "September", "October", "November", "December"]
 
+seasons = ["Dec?Jan?Feb","Mar?Apr?May","Jun?Jul?Aug", "Sep?Oct?Nov"]
+
+# data["Temp_Change_C"] = data["Value"]
+data = data[["Country","Year","Temp_Change_C"]]
+
+data.to_csv("maybe/annual_temp_change.csv", index=False)
 
 # ## Split the total dataset into smaller pieces for easier and faster processing
 # # Define country groups (adjust ranges as needed)
