@@ -1,6 +1,5 @@
 """
-This is the file that was used to manipulate the data in the original sea_ice.csv, and write the new dataset
-to the global_monthly_ice.csv
+This is the file that was used to manipulate the data in the original sea_ice.csv
 """
 
 import pandas as pd

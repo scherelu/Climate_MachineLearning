@@ -5,26 +5,32 @@ This is the EDA file. After preparing our datasets, we will explore their struct
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
+import xarray as xr
 
-monthly = pd.read_csv("data/monthly_ice.csv", header=0)
-yearly = pd.read_csv("data/yearly_ice.csv", header=0)
+data = xr.open_dataset("NOAA_GlobalTemp.nc")
+dataframe = data.to_dataframe()
 
-monthly["Date"] = pd.to_datetime(monthly[["Year", "Month"]].assign(Day=1))
-yearly["Year"] = pd.to_datetime(yearly["Year"], format="%Y")
+dataframe.to_csv("NOAA_Global_Temp.csv", index=False)
 
-plt.figure(figsize=(12,6))
+# monthly = pd.read_csv("data/monthly_ice.csv", header=0)
+# yearly = pd.read_csv("data/yearly_ice.csv", header=0)
 
-plt.plot(yearly["Year"], yearly["Change_Global"], label="Yearly_Global", color="black", linewidth=2)
-plt.plot(yearly["Year"], yearly["Change_North"], label="Yearly_North", color="blue", linewidth=2)
-plt.plot(yearly["Year"], yearly["Change_South"], label="Yearly_South", color="red", linewidth=2)
+# monthly["Date"] = pd.to_datetime(monthly[["Year", "Month"]].assign(Day=1))
+# yearly["Year"] = pd.to_datetime(yearly["Year"], format="%Y")
 
-plt.xlabel("Year")
-plt.ylabel("Seas ice area in Million km^2")
-plt.title("Yearly Change of Sea Ice Extent, relative to 1979 (1979-2018)")
-plt.legend()
-plt.grid(True)
+# plt.figure(figsize=(12,6))
 
-plt.show()
+# plt.plot(yearly["Year"], yearly["Change_Global"], label="Yearly_Global", color="black", linewidth=2)
+# plt.plot(yearly["Year"], yearly["Change_North"], label="Yearly_North", color="blue", linewidth=2)
+# plt.plot(yearly["Year"], yearly["Change_South"], label="Yearly_South", color="red", linewidth=2)
+
+# plt.xlabel("Year")
+# plt.ylabel("Seas ice area in Million km^2")
+# plt.title("Yearly Change of Sea Ice Extent, relative to 1979 (1979-2018)")
+# plt.legend()
+# plt.grid(True)
+
+# plt.show()
 
 # feature_names = data.columns
 # shape = data.shape
