@@ -9,12 +9,16 @@ will of course be included in our final report for transparency.
 import pandas as pd
 import numpy as np
 
-data = pd.read_csv("data/annual/cleaned_annual_temp.csv", header=0)
-data1 = pd.read_csv("data/annual/co2_ch4_ice_combo.csv", header=0)
 
-combo = pd.merge(data, data1, on="Year", how="left")
+data = pd.read_csv("data/annual/annual_data.csv", header=0)
 
-combo.to_csv("data/annual/annual_data.csv", index=False)
+print(data.shape)
+
+# data1 = pd.read_csv("data/annual/co2_ch4_ice_combo.csv", header=0)
+
+# combo = pd.merge(data, data1, on="Year", how="left")
+
+# combo.to_csv("data/annual/annual_data.csv", index=False)
 
 # months = ["January", "February", "March", "April", "May", "June", "July", "August",
 #           "September", "October", "November", "December"]
