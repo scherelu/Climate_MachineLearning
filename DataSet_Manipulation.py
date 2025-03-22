@@ -1,15 +1,29 @@
-import pandas as pd
+"""
+This file is used to manipulate all of our datasets and to merge them into a comprehenseive one.
+The annual data set is already merged, the monthly dataset is still work in progress. Sadly I realized too late
+that we need to hand this in aswell. While I do have a record of how I manipulated the datafiles, I did not have
+time to reconstruct all of the python code that went into it. The methods how we attained our final datasets
+will of course be included in our final report for transparency.
+"""
 
-data = pd.read_csv("data/annual/co2_gr_gl.csv", header=43)
+import pandas as pd
+import numpy as np
+
+data = pd.read_csv("data/annual/cleaned_annual_temp.csv", header=0)
+data1 = pd.read_csv("data/annual/co2_ch4_ice_combo.csv", header=0)
+
+combo = pd.merge(data, data1, on="Year", how="left")
+
+combo.to_csv("data/annual/annual_data.csv", index=False)
 
 # months = ["January", "February", "March", "April", "May", "June", "July", "August",
 #           "September", "October", "November", "December"]
 
 # seasons = ["Dec?Jan?Feb","Mar?Apr?May","Jun?Jul?Aug", "Sep?Oct?Nov"]
 
-data = data[["year","ann inc"]]
+# data = data[["year","ann inc"]]
 
-data.to_csv("data/annual/co2_gr_gl.csv", index=False)
+# data.to_csv("data/annual/co2_gr_gl.csv", index=False)
 
 # data["Temp_Change_C"] = data["Value"]
 
@@ -33,21 +47,3 @@ data.to_csv("data/annual/co2_gr_gl.csv", index=False)
 # clean_data = data[data["Country"].isin(complete_countries)]
 
 # clean_data.to_csv("cleaned_annual_temp.csv", index=False)
-##-----------------------------------------------------------
-
-# ## Split the total dataset into smaller pieces for easier and faster processing
-# # Define country groups (adjust ranges as needed)
-# country_groups = {
-#     "A-B": ["A", "B"],
-#     "C-F": ["C", "D", "E", "F"],
-#     "G-K": ["G", "H", "I", "J", "K"],
-#     "L-O": ["L", "M", "N", "O"],
-#     "P-S": ["P", "Q", "R", "S"],
-#     "T-Z": ["T", "U", "V", "W", "X", "Y", "Z"]
-# }
-
-# # Loop through groups and save separate CSV files
-# for group, letters in country_groups.items():
-#     subset = data[data["Area"].str[0].isin(letters)]
-#     subset.to_csv(f"_{group}_temperature.csv", index=False)
-#     print(f"Saved: _{group}_temperature.csv ({len(subset)} rows)")
