@@ -61,6 +61,9 @@ ch4_mean['ch4_growth'] = (
 
 ch4_mean[['average', 'trend','ch4_growth']] = round(ch4_mean[['average', 'trend','ch4_growth']] / 10, 2)
 
+ch4_mean.rename(columns={'average': 'ch4_average', 'trend': 'ch4_trend'}, inplace=True)
+co2_mean.rename(columns={'average': 'co2_average', 'trend': 'c02_trend'}, inplace=True)
+
 co2_ch4_combo = pd.merge(co2_mean, ch4_mean, on=['year', 'month'], how='left')
 
 mask = (co2_ch4_combo['year'] <= 2020)
@@ -69,6 +72,14 @@ co2_ch4_combo = co2_ch4_combo[mask]
 co2_ch4_ice_combo = pd.merge(co2_ch4_combo, ice_month, on=['year', 'month'], how='left')
 co2_ch4_ice_combo = co2_ch4_ice_combo.sort_values(['month', 'year'])
 
-monthly_data = pd.merge(temp_set_month, co2_ch4_ice_combo, on=['year', 'month'], how='left')
+monthly_data = pd.merge(temp_set_month, co2_ch4_ice_combo, on=['year', 'month', 'month_cat'], how='left')
+
+column_order = [
+    'country', 'year', 'month_cat', 'month', 'temp_change_c', 'co2_average', 'c02_trend',
+    'co2_growth', 'ch4_average', 'ch4_trend', 'ch4_growth', 'extent_north', 'extent_south',
+    'extent_global', 'change_north', 'change_south', 'change_global'
+]
+
+monthly_data = monthly_data[column_order]
 
 monthly_data.to_csv("data/monthly/monthly_data.csv", index=False)
