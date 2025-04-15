@@ -44,7 +44,7 @@ for country, group in temp_change_ann.groupby("Country"): # iterate of dataset g
 
 # create a dataframe of incomplete countries
 incomplete_df = pd.DataFrame(incomplete_countries, columns=["Country", "Missing_Count", "Missing_Years"])
-incomplete_df.to_csv("data/temp/removed_countries_annual.csv", index=False)
+incomplete_df.to_csv("data/preprocessed/removed_countries_annual.csv", index=False)
 
 # update annual data with complete data only
 temp_change_ann = pd.concat(complete_countries).reset_index(drop=True)
@@ -85,7 +85,7 @@ for country, group in temp_change_mon.groupby("Country"): # iterate of dataset g
 
 # create a dataframe of incomplete countries
 incomplete_df = pd.DataFrame(incomplete_countries, columns=["Country", "Missing_Count", "Missing_Years"])
-incomplete_df.to_csv("data/temp/removed_countries_monthly.csv", index=False)
+incomplete_df.to_csv("data/preprocessed/removed_countries_monthly.csv", index=False)
 
 # update monthly data with complete data only
 temp_change_mon = pd.concat(complete_countries).reset_index(drop=True)
@@ -120,6 +120,11 @@ temp_change_mon["Months"] = pd.Categorical(
     ordered=True
 )
 
+temp_change_mon.rename(columns={'Months': 'month_cat', 'Month_Num': 'month'}, inplace=True)
+
+temp_change_ann.columns = temp_change_ann.columns.str.lower()
+temp_change_mon.columns = temp_change_mon.columns.str.lower()
+
 # store cleaned datasets
-temp_change_ann.to_csv("data/temp/annual_clean.csv", index=False)
-temp_change_mon.to_csv("data/temp/monthly_clean.csv", index=False)
+temp_change_ann.to_csv("data/preprocessed/annual_clean.csv", index=False)
+temp_change_mon.to_csv("data/preprocessed/monthly_clean.csv", index=False)

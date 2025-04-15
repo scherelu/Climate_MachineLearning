@@ -85,6 +85,11 @@ combined_hem["Month_Num"] = pd.Categorical(
     ordered=True
 )
 
+combined_hem.rename(columns={'Month': 'month_cat', 'Month_Num': 'month'}, inplace=True)
+
+annual_data.columns = annual_data.columns.str.lower()
+combined_hem.columns = combined_hem.columns.str.lower()
+
 # store data
-annual_data.to_csv('data/temp/ice_annual.csv', index=False)
-combined_hem.to_csv('data/temp/ice_monthly.csv', index=False)
+annual_data.to_csv('data/preprocessed/ice_annual.csv', index=False)
+combined_hem.to_csv('data/preprocessed/ice_monthly.csv', index=False)

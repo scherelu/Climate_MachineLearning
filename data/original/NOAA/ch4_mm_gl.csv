@@ -44,7 +44,6 @@
 # control procedures. Occasionally, earlier years may also change for the same
 # reasons.  Usually these changes are minor.
 year,month,decimal,average,average_unc,trend,trend_unc
-
 1983,7,1983.542,1625.96,2.19,1635.07,1.42
 1983,8,1983.625,1628.05,2.72,1635.59,1.36
 1983,9,1983.708,1638.43,2.16,1636.17,1.29

@@ -23,14 +23,48 @@ NOTE:
     Thus, the co2_annmean_gl.csv and the ch4_annmean_gl.csv files are not in their original shape 
     anymore in the sense that the missing data is already included. To obtain the original data,
     simply follow the respective link above.
+    
+    The preprocessed versions of the sea ice and average temperature datasets which are used in this 
+    script, can be created by prviously running the scripts in the root folder "PrepareAveTempSet.py" 
+    and "PrepareSeaIceSet.py".
 
 """
 
 import pandas as pd
 
-temp_change_set = pd.read_csv("data/temp/annual_clean.csv", header=0)
-ch4_mean = pd.read_csv("data/original/NOAA/ch4_annmean_gl.csv", header=43)
+temp_change_set = pd.read_csv("data/preprocessed/annual_clean.csv", header=0)
+ch4_mean = pd.read_csv("data/preprocessed/ch4_annmean_gl.csv", header=0)
 ch4_growth = pd.read_csv("data/original/NOAA/ch4_gr_gl.csv", header=45)
-co2_mean = pd.read_csv("data/original/NOAA/co2_annmean_gl.csv", header=37)
-co2_growth = pd.read_csv("data/original/NOAA/co2_gr_gl.csv", header=42)
-sea_ice = pd.read_csv("data/temp/ice_annual.csv", header=0)
+co2_mean = pd.read_csv("data/preprocessed/co2_annmean_gl.csv", header=0)
+co2_growth = pd.read_csv("data/original/NOAA/co2_gr_gl.csv", header=43)
+sea_ice = pd.read_csv("data/preprocessed/ice_annual.csv", header=0)
+
+
+ch4_growth = ch4_growth[['year', 'ann inc']]
+ch4_combo = pd.merge(ch4_mean, ch4_growth, on='year', how='left')
+ch4_combo.rename(columns={'ann inc': 'ch4_growth'}, inplace=True)
+mask = (ch4_combo['year'] >= 1960) & (ch4_combo['year'] <= 1984)
+ch4_combo.loc[mask & ch4_combo['ch4_growth'].isna(), 'ch4_growth'] = round(
+    ch4_combo.loc[mask, "ch4_mean"].diff().shift(-1), 2
+)
+ch4_combo[['ch4_mean', 'ch4_growth']] = round(ch4_combo[['ch4_mean', 'ch4_growth']] / 10, 2)
+
+mask = (ch4_combo['year'] >= 1961) & (ch4_combo['year'] <= 2020) # reduce data to 1961 - 2020
+ch4_combo = ch4_combo[mask]
+
+co2_growth = co2_growth[['year', 'ann inc']]
+co2_growth.rename(columns={'ann inc': 'co2_growth'}, inplace=True)
+co2_combo = pd.merge(co2_mean, co2_growth, on='year', how='left')
+mask = (co2_combo['year'] >= 1961) & (co2_combo['year'] <= 2020) # reduce data to 1961 - 2020
+co2_combo = co2_combo[mask]
+
+co2_ch4_combo = pd.merge(co2_combo, ch4_combo, on='year', how='left')
+
+sea_ice.rename(columns={'Year' : 'year'}, inplace=True)
+co2_ch4_ice_combo = pd.merge(co2_ch4_combo, sea_ice, on='year', how='left')
+
+temp_change_set['absol_temp_c'] = round(temp_change_set['temp_change_c'] + 14, 3)
+
+annual_data = pd.merge(temp_change_set, co2_ch4_ice_combo, on='year', how='left')
+
+annual_data.to_csv("data/annual/annual_data.csv", index=False)

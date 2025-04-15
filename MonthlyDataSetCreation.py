@@ -10,11 +10,7 @@ Original Datasets:
     sea_ice: https://www.kaggle.com/datasets/nsidcorg/daily-sea-ice-extent-data
     ave_temp_change: https://www.kaggle.com/datasets/sevgisarac/temperature-change
     co2 monthly mean: https://gml.noaa.gov/webdata/ccgg/trends/co2/co2_mm_gl.csv
-    co2 annual mean: https://gml.noaa.gov/webdata/ccgg/trends/co2/co2_annmean_gl.csv
-    co2 annual growth: https://gml.noaa.gov/webdata/ccgg/trends/co2/co2_gr_gl.csv
     ch4 monthly mean: https://gml.noaa.gov/webdata/ccgg/trends/ch4/ch4_mm_gl.csv
-    ch4 annual mean: https://gml.noaa.gov/webdata/ccgg/trends/ch4/ch4_annmean_gl.csv
-    ch4 annual growth: https://gml.noaa.gov/webdata/ccgg/trends/ch4/ch4_gr_gl.csv
 
 NOTE: 
     The missing data between 1961 and 1979 in the co2 annual mean dataset was manually completed using  
@@ -25,3 +21,54 @@ NOTE:
     was used.
 
 """
+
+import pandas as pd
+
+temp_set_month = pd.read_csv('data/preprocessed/monthly_clean.csv', header=0)
+ice_month = pd.read_csv('data/preprocessed/ice_monthly.csv', header=0)
+co2_mean = pd.read_csv('data/original/NOAA/co2_mm_gl.csv', header=38)
+ch4_mean = pd.read_csv('data/original/NOAA/ch4_mm_gl.csv', header=45)
+
+columns_to_keep = ['year', 'month', 'average', 'trend']
+
+co2_mean = co2_mean[columns_to_keep]
+ch4_mean = ch4_mean[columns_to_keep]
+
+mask = (co2_mean['year'] <= 2021) # remove unwanted years
+co2_mean = co2_mean[mask]
+
+mask = (ch4_mean['year'] > 1983) & (ch4_mean['year'] <= 2021) # remove unwanted years (1983 incomplete)
+ch4_mean[mask]
+
+co2_mean = co2_mean.sort_values(['month', 'year'])
+ch4_mean = ch4_mean.sort_values(['month', 'year'])
+
+co2_mean['co2_growth'] = (
+    co2_mean.loc[(co2_mean['year'] >= 1979) & (co2_mean['year'] <= 2021)]
+    .groupby('month')['average']
+    .diff()
+    .shift(-1)
+    .round(2)
+)
+
+ch4_mean['ch4_growth'] = (
+    ch4_mean.loc[(ch4_mean['year'] >= 1983) & (ch4_mean['year'] <= 2021)]
+    .groupby('month')['average']
+    .diff()
+    .shift(-1)
+    .round(2)
+)
+
+ch4_mean[['average', 'trend','ch4_growth']] = round(ch4_mean[['average', 'trend','ch4_growth']] / 10, 2)
+
+co2_ch4_combo = pd.merge(co2_mean, ch4_mean, on=['year', 'month'], how='left')
+
+mask = (co2_ch4_combo['year'] <= 2020)
+co2_ch4_combo = co2_ch4_combo[mask]
+
+co2_ch4_ice_combo = pd.merge(co2_ch4_combo, ice_month, on=['year', 'month'], how='left')
+co2_ch4_ice_combo = co2_ch4_ice_combo.sort_values(['month', 'year'])
+
+monthly_data = pd.merge(temp_set_month, co2_ch4_ice_combo, on=['year', 'month'], how='left')
+
+monthly_data.to_csv("data/monthly/monthly_data.csv", index=False)
