@@ -67,4 +67,8 @@ temp_change_set['absol_temp_c'] = round(temp_change_set['temp_change_c'] + 14, 3
 
 annual_data = pd.merge(temp_change_set, co2_ch4_ice_combo, on='year', how='left')
 
+mask = ((annual_data['year'] >= 1979) & (annual_data['year'] <= 2018))
+annual_data_trim = annual_data[mask]
+
 annual_data.to_csv("data/annual/annual_data.csv", index=False)
+annual_data_trim.to_csv("data/annual/annual_data_trim.csv", index=False)

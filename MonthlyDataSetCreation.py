@@ -82,4 +82,8 @@ column_order = [
 
 monthly_data = monthly_data[column_order]
 
+mask = ((monthly_data['year'] >= 1979) & (monthly_data['year'] <= 2018))
+monthly_data_trim = monthly_data[mask]
+
 monthly_data.to_csv("data/monthly/monthly_data.csv", index=False)
+monthly_data_trim.to_csv("data/monthly/monthly_data_trim.csv", index=False)
