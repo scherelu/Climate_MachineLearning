@@ -30,6 +30,9 @@ NOTE:
     
     For analysis purposes, a trimmed version of the dataset is being created, restricted to the range 
     from 1979 - 2018 That way, the amount of missing data (sea ice data) is reduced drastically.
+    
+    - Author: Ludwig Scherer
+    - Date: 04/15/2025
 
 """
 

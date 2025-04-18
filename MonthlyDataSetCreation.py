@@ -18,6 +18,9 @@ NOTE:
     
     For analysis purposes, a trimmed version is being created, restricted to the range from 1979 - 2018
     That way, the amount of missing data is reduced drastically.
+    
+    - Author: Ludwig Scherer
+    - Date: 04/15/2025
 
 """
 

@@ -10,6 +10,9 @@ Original Dataset:
 
     sea_ice: https://www.kaggle.com/datasets/nsidcorg/daily-sea-ice-extent-data
 
+    - Author: Ludwig Scherer
+    - Date: 04/15/2025
+
 """
 
 import pandas as pd

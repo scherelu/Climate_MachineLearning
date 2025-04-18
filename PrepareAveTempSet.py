@@ -10,6 +10,9 @@ Original Dataset:
 
     ave_temp_change: https://www.kaggle.com/datasets/sevgisarac/temperature-change
 
+    - Author: Ludwig Scherer
+    - Date: 04/15/2025
+
 """
 
 import pandas as pd
