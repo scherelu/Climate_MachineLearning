@@ -215,8 +215,8 @@ American Samoa,1993,0.204
 American Samoa,1994,0.343
 American Samoa,1995,0.813
 American Samoa,1996,0.743
-American Samoa,1997,0.568
-American Samoa,1998,0.394
+American Samoa,1997,0.5683
+American Samoa,1998,0.3937
 American Samoa,1999,0.219
 American Samoa,2000,0.685
 American Samoa,2001,0.962
@@ -519,7 +519,7 @@ Antigua and Barbuda,1997,0.431
 Antigua and Barbuda,1998,0.992
 Antigua and Barbuda,1999,0.439
 Antigua and Barbuda,2000,0.186
-Antigua and Barbuda,2001,0.342
+Antigua and Barbuda,2001,0.3425
 Antigua and Barbuda,2002,0.499
 Antigua and Barbuda,2003,0.65
 Antigua and Barbuda,2004,0.331
@@ -615,9 +615,9 @@ Aruba,1973,0.166
 Aruba,1974,-0.424
 Aruba,1975,-0.222
 Aruba,1976,-0.48
-Aruba,1977,-0.25
+Aruba,1977,-0.2505
 Aruba,1978,-0.021
-Aruba,1979,0.208
+Aruba,1979,0.2085
 Aruba,1980,0.438
 Aruba,1981,0.462
 Aruba,1982,0.382
@@ -635,26 +635,26 @@ Aruba,1993,0.266
 Aruba,1994,0.292
 Aruba,1995,0.573
 Aruba,1996,0.727
-Aruba,1997,0.741
-Aruba,1998,0.755
-Aruba,1999,0.769
-Aruba,2000,0.782
-Aruba,2001,0.796
-Aruba,2002,0.81
+Aruba,1997,0.7409
+Aruba,1998,0.7547
+Aruba,1999,0.7686
+Aruba,2000,0.7824
+Aruba,2001,0.7963
+Aruba,2002,0.8101
 Aruba,2003,0.824
 Aruba,2004,0.425
 Aruba,2005,0.607
 Aruba,2006,0.308
 Aruba,2007,0.756
-Aruba,2008,0.869
-Aruba,2009,0.983
+Aruba,2008,0.8693
+Aruba,2009,0.9827
 Aruba,2010,1.096
 Aruba,2011,0.32
 Aruba,2012,0.414
 Aruba,2013,0.951
 Aruba,2014,0.865
 Aruba,2015,1.051
-Aruba,2016,1.136
+Aruba,2016,1.1355
 Aruba,2017,1.22
 Aruba,2018,0.637
 Aruba,2019,0.97
@@ -1633,17 +1633,17 @@ Burundi,1971,-0.4
 Burundi,1972,0.012
 Burundi,1973,0.425
 Burundi,1974,0.015
-Burundi,1975,0.068
-Burundi,1976,0.122
-Burundi,1977,0.175
+Burundi,1975,0.0682
+Burundi,1976,0.1215
+Burundi,1977,0.1748
 Burundi,1978,0.228
-Burundi,1979,0.358
-Burundi,1980,0.489
-Burundi,1981,0.619
+Burundi,1979,0.3582
+Burundi,1980,0.4885
+Burundi,1981,0.6188
 Burundi,1982,0.749
 Burundi,1983,0.665
-Burundi,1984,0.617
-Burundi,1985,0.57
+Burundi,1984,0.6173
+Burundi,1985,0.5697
 Burundi,1986,0.522
 Burundi,1987,0.587
 Burundi,1988,0.454
@@ -1651,11 +1651,11 @@ Burundi,1989,0.189
 Burundi,1990,0.612
 Burundi,1991,0.205
 Burundi,1992,0.338
-Burundi,1993,0.428
+Burundi,1993,0.4285
 Burundi,1994,0.519
-Burundi,1995,0.609
+Burundi,1995,0.6095
 Burundi,1996,0.7
-Burundi,1997,0.79
+Burundi,1997,0.7905
 Burundi,1998,0.881
 Burundi,1999,0.703
 Burundi,2000,0.525
@@ -1663,12 +1663,12 @@ Burundi,2001,0.436
 Burundi,2002,0.878
 Burundi,2003,0.947
 Burundi,2004,1.061
-Burundi,2005,1.031
-Burundi,2006,1.0
+Burundi,2005,1.0307
+Burundi,2006,1.0003
 Burundi,2007,0.97
 Burundi,2008,0.454
-Burundi,2009,0.529
-Burundi,2010,0.605
+Burundi,2009,0.5293
+Burundi,2010,0.6047
 Burundi,2011,0.68
 Burundi,2012,0.68
 Burundi,2013,0.68
@@ -1992,7 +1992,7 @@ Cayman Islands,1970,-0.131
 Cayman Islands,1971,-0.107
 Cayman Islands,1972,0.368
 Cayman Islands,1973,0.445
-Cayman Islands,1974,0.684
+Cayman Islands,1974,0.6835
 Cayman Islands,1975,0.922
 Cayman Islands,1976,-0.066
 Cayman Islands,1977,0.366
@@ -2018,11 +2018,11 @@ Cayman Islands,1996,0.46
 Cayman Islands,1997,1.015
 Cayman Islands,1998,0.943
 Cayman Islands,1999,0.472
-Cayman Islands,2000,0.505
-Cayman Islands,2001,0.537
+Cayman Islands,2000,0.5047
+Cayman Islands,2001,0.5373
 Cayman Islands,2002,0.57
-Cayman Islands,2003,0.603
-Cayman Islands,2004,0.635
+Cayman Islands,2003,0.6027
+Cayman Islands,2004,0.6353
 Cayman Islands,2005,0.668
 Cayman Islands,2006,0.605
 Cayman Islands,2007,0.756
@@ -2599,12 +2599,12 @@ Christmas Island,1977,-0.029
 Christmas Island,1978,-0.172
 Christmas Island,1979,0.137
 Christmas Island,1980,0.203
-Christmas Island,1981,0.186
+Christmas Island,1981,0.1865
 Christmas Island,1982,0.17
-Christmas Island,1983,0.154
+Christmas Island,1983,0.1535
 Christmas Island,1984,0.137
-Christmas Island,1985,0.199
-Christmas Island,1986,0.26
+Christmas Island,1985,0.1987
+Christmas Island,1986,0.2603
 Christmas Island,1987,0.322
 Christmas Island,1988,0.315
 Christmas Island,1989,0.104
@@ -2628,9 +2628,9 @@ Christmas Island,2006,0.205
 Christmas Island,2007,0.578
 Christmas Island,2008,0.14
 Christmas Island,2009,0.326
-Christmas Island,2010,0.457
-Christmas Island,2011,0.588
-Christmas Island,2012,0.72
+Christmas Island,2010,0.4572
+Christmas Island,2011,0.5885
+Christmas Island,2012,0.7197
 Christmas Island,2013,0.851
 Christmas Island,2014,0.771
 Christmas Island,2015,0.826
@@ -2855,7 +2855,7 @@ Congo,1993,0.061
 Congo,1994,0.36
 Congo,1995,0.601
 Congo,1996,0.078
-Congo,1997,0.582
+Congo,1997,0.5825
 Congo,1998,1.087
 Congo,1999,0.659
 Congo,2000,0.442
@@ -2932,9 +2932,9 @@ Cook Islands,2010,0.732
 Cook Islands,2011,0.58
 Cook Islands,2012,0.301
 Cook Islands,2013,0.508
-Cook Islands,2014,0.678
+Cook Islands,2014,0.6775
 Cook Islands,2015,0.847
-Cook Islands,2016,1.016
+Cook Islands,2016,1.0165
 Cook Islands,2017,1.186
 Cook Islands,2018,0.748
 Cook Islands,2019,0.73
@@ -3350,7 +3350,7 @@ Djibouti,2008,0.389
 Djibouti,2009,1.58
 Djibouti,2010,1.113
 Djibouti,2011,0.984
-Djibouti,2012,1.138
+Djibouti,2012,1.1385
 Djibouti,2013,1.293
 Djibouti,2014,1.153
 Djibouti,2015,1.638
@@ -3689,13 +3689,13 @@ Equatorial Guinea,1987,0.401
 Equatorial Guinea,1988,0.28
 Equatorial Guinea,1989,-0.001
 Equatorial Guinea,1990,0.135
-Equatorial Guinea,1991,-0.034
+Equatorial Guinea,1991,-0.0345
 Equatorial Guinea,1992,-0.204
 Equatorial Guinea,1993,0.099
 Equatorial Guinea,1994,0.299
 Equatorial Guinea,1995,0.921
 Equatorial Guinea,1996,0.466
-Equatorial Guinea,1997,0.748
+Equatorial Guinea,1997,0.7475
 Equatorial Guinea,1998,1.029
 Equatorial Guinea,1999,0.547
 Equatorial Guinea,2000,0.353
@@ -4228,7 +4228,7 @@ French Southern Territories,1986,0.597
 French Southern Territories,1987,0.72
 French Southern Territories,1988,-0.453
 French Southern Territories,1989,0.61
-French Southern Territories,1990,0.7
+French Southern Territories,1990,0.7005
 French Southern Territories,1991,0.791
 French Southern Territories,1992,0.315
 French Southern Territories,1993,0.77
@@ -5835,9 +5835,9 @@ Jamaica,1973,0.369
 Jamaica,1974,0.225
 Jamaica,1975,0.322
 Jamaica,1976,-0.277
-Jamaica,1977,-0.04
-Jamaica,1978,0.198
-Jamaica,1979,0.435
+Jamaica,1977,-0.0398
+Jamaica,1978,0.1975
+Jamaica,1979,0.4348
 Jamaica,1980,0.672
 Jamaica,1981,0.92
 Jamaica,1982,0.413
@@ -6102,8 +6102,8 @@ Kiribati,2000,0.071
 Kiribati,2001,0.353
 Kiribati,2002,0.454
 Kiribati,2003,0.537
-Kiribati,2004,0.53
-Kiribati,2005,0.524
+Kiribati,2004,0.5303
+Kiribati,2005,0.5237
 Kiribati,2006,0.517
 Kiribati,2007,0.563
 Kiribati,2008,0.327
@@ -7094,8 +7094,8 @@ Mayotte,1972,-0.188
 Mayotte,1973,0.123
 Mayotte,1974,-0.568
 Mayotte,1975,-0.214
-Mayotte,1976,-0.099
-Mayotte,1977,0.017
+Mayotte,1976,-0.0987
+Mayotte,1977,0.0167
 Mayotte,1978,0.132
 Mayotte,1979,0.061
 Mayotte,1980,0.229
@@ -7230,22 +7230,22 @@ Midway Island,1988,0.167
 Midway Island,1989,-0.351
 Midway Island,1990,-0.686
 Midway Island,1991,-0.305
-Midway Island,1992,-0.27
-Midway Island,1993,-0.235
-Midway Island,1994,-0.2
-Midway Island,1995,-0.165
-Midway Island,1996,-0.129
-Midway Island,1997,-0.094
-Midway Island,1998,-0.059
-Midway Island,1999,-0.024
-Midway Island,2000,0.011
-Midway Island,2001,0.046
-Midway Island,2002,0.081
-Midway Island,2003,0.116
-Midway Island,2004,0.152
-Midway Island,2005,0.187
-Midway Island,2006,0.222
-Midway Island,2007,0.257
+Midway Island,1992,-0.2699
+Midway Island,1993,-0.2348
+Midway Island,1994,-0.1996
+Midway Island,1995,-0.1645
+Midway Island,1996,-0.1294
+Midway Island,1997,-0.0943
+Midway Island,1998,-0.0592
+Midway Island,1999,-0.0241
+Midway Island,2000,0.0111
+Midway Island,2001,0.0462
+Midway Island,2002,0.0813
+Midway Island,2003,0.1164
+Midway Island,2004,0.1515
+Midway Island,2005,0.1866
+Midway Island,2006,0.2218
+Midway Island,2007,0.2569
 Midway Island,2008,0.292
 Midway Island,2009,-0.722
 Midway Island,2010,-0.64
@@ -7419,7 +7419,7 @@ Montserrat,1997,0.431
 Montserrat,1998,0.992
 Montserrat,1999,0.439
 Montserrat,2000,0.186
-Montserrat,2001,0.342
+Montserrat,2001,0.3425
 Montserrat,2002,0.499
 Montserrat,2003,0.65
 Montserrat,2004,0.331
@@ -7685,12 +7685,12 @@ Nauru,1963,-0.408
 Nauru,1964,-0.441
 Nauru,1965,-0.474
 Nauru,1966,-0.507
-Nauru,1967,-0.34
-Nauru,1968,-0.173
-Nauru,1969,-0.006
-Nauru,1970,0.162
-Nauru,1971,0.329
-Nauru,1972,0.496
+Nauru,1967,-0.3399
+Nauru,1968,-0.1727
+Nauru,1969,-0.0056
+Nauru,1970,0.1616
+Nauru,1971,0.3287
+Nauru,1972,0.4959
 Nauru,1973,0.663
 Nauru,1974,0.312
 Nauru,1975,-0.004
@@ -7704,9 +7704,9 @@ Nauru,1982,-0.397
 Nauru,1983,-0.336
 Nauru,1984,-0.275
 Nauru,1985,-0.203
-Nauru,1986,-0.159
-Nauru,1987,-0.114
-Nauru,1988,-0.07
+Nauru,1986,-0.1588
+Nauru,1987,-0.1145
+Nauru,1988,-0.0703
 Nauru,1989,-0.026
 Nauru,1990,-0.405
 Nauru,1991,-0.23
@@ -8292,8 +8292,8 @@ Norfolk Island,1970,0.446
 Norfolk Island,1971,0.378
 Norfolk Island,1972,-0.088
 Norfolk Island,1973,0.758
-Norfolk Island,1974,0.446
-Norfolk Island,1975,0.133
+Norfolk Island,1974,0.4457
+Norfolk Island,1975,0.1333
 Norfolk Island,1976,-0.179
 Norfolk Island,1977,-0.246
 Norfolk Island,1978,-0.118
@@ -8315,9 +8315,9 @@ Norfolk Island,1993,-0.107
 Norfolk Island,1994,-0.161
 Norfolk Island,1995,0.463
 Norfolk Island,1996,0.818
-Norfolk Island,1997,0.684
-Norfolk Island,1998,0.55
-Norfolk Island,1999,0.417
+Norfolk Island,1997,0.6842
+Norfolk Island,1998,0.5505
+Norfolk Island,1999,0.4168
 Norfolk Island,2000,0.283
 Norfolk Island,2001,0.76
 Norfolk Island,2002,0.594
@@ -8327,8 +8327,8 @@ Norfolk Island,2005,0.506
 Norfolk Island,2006,0.388
 Norfolk Island,2007,0.474
 Norfolk Island,2008,0.363
-Norfolk Island,2009,0.542
-Norfolk Island,2010,0.722
+Norfolk Island,2009,0.5423
+Norfolk Island,2010,0.7217
 Norfolk Island,2011,0.901
 Norfolk Island,2012,0.431
 Norfolk Island,2013,0.483
@@ -8917,7 +8917,7 @@ Pitcairn,1995,-0.153
 Pitcairn,1996,-0.366
 Pitcairn,1997,-0.385
 Pitcairn,1998,-0.578
-Pitcairn,1999,-0.108
+Pitcairn,1999,-0.1085
 Pitcairn,2000,0.361
 Pitcairn,2001,0.118
 Pitcairn,2002,0.458
@@ -9377,13 +9377,13 @@ Rwanda,1975,0.021
 Rwanda,1976,0.09
 Rwanda,1977,0.159
 Rwanda,1978,0.228
-Rwanda,1979,0.358
-Rwanda,1980,0.489
-Rwanda,1981,0.619
+Rwanda,1979,0.3582
+Rwanda,1980,0.4885
+Rwanda,1981,0.6188
 Rwanda,1982,0.749
 Rwanda,1983,0.953
-Rwanda,1984,0.897
-Rwanda,1985,0.84
+Rwanda,1984,0.8967
+Rwanda,1985,0.8403
 Rwanda,1986,0.784
 Rwanda,1987,0.609
 Rwanda,1988,0.518
@@ -9391,11 +9391,11 @@ Rwanda,1989,0.229
 Rwanda,1990,0.612
 Rwanda,1991,0.191
 Rwanda,1992,0.338
-Rwanda,1993,0.428
+Rwanda,1993,0.4285
 Rwanda,1994,0.519
-Rwanda,1995,0.609
+Rwanda,1995,0.6095
 Rwanda,1996,0.7
-Rwanda,1997,0.79
+Rwanda,1997,0.7905
 Rwanda,1998,0.881
 Rwanda,1999,0.615
 Rwanda,2000,0.349
@@ -9407,8 +9407,8 @@ Rwanda,2005,0.866
 Rwanda,2006,0.893
 Rwanda,2007,0.92
 Rwanda,2008,0.5
-Rwanda,2009,0.565
-Rwanda,2010,0.629
+Rwanda,2009,0.5647
+Rwanda,2010,0.6293
 Rwanda,2011,0.694
 Rwanda,2012,0.694
 Rwanda,2013,0.694
@@ -9519,7 +9519,7 @@ Saint Kitts and Nevis,1997,0.431
 Saint Kitts and Nevis,1998,0.992
 Saint Kitts and Nevis,1999,0.439
 Saint Kitts and Nevis,2000,0.186
-Saint Kitts and Nevis,2001,0.342
+Saint Kitts and Nevis,2001,0.3425
 Saint Kitts and Nevis,2002,0.499
 Saint Kitts and Nevis,2003,0.65
 Saint Kitts and Nevis,2004,0.331
@@ -9755,8 +9755,8 @@ Samoa,1993,0.094
 Samoa,1994,0.247
 Samoa,1995,0.728
 Samoa,1996,0.668
-Samoa,1997,0.494
-Samoa,1998,0.319
+Samoa,1997,0.4937
+Samoa,1998,0.3193
 Samoa,1999,0.145
 Samoa,2000,0.6
 Samoa,2001,0.877
@@ -9767,7 +9767,7 @@ Samoa,2005,0.875
 Samoa,2006,0.465
 Samoa,2007,0.948
 Samoa,2008,0.501
-Samoa,2009,0.76
+Samoa,2009,0.7595
 Samoa,2010,1.018
 Samoa,2011,0.542
 Samoa,2012,0.647
@@ -9868,8 +9868,8 @@ Sao Tome and Principe,1986,-0.19
 Sao Tome and Principe,1987,0.352
 Sao Tome and Principe,1988,0.39
 Sao Tome and Principe,1989,-0.183
-Sao Tome and Principe,1990,-0.162
-Sao Tome and Principe,1991,-0.142
+Sao Tome and Principe,1990,-0.1623
+Sao Tome and Principe,1991,-0.1417
 Sao Tome and Principe,1992,-0.121
 Sao Tome and Principe,1993,0.319
 Sao Tome and Principe,1994,0.231
@@ -10239,14 +10239,14 @@ Solomon Islands,1997,0.021
 Solomon Islands,1998,0.408
 Solomon Islands,1999,-0.006
 Solomon Islands,2000,0.343
-Solomon Islands,2001,0.347
-Solomon Islands,2002,0.35
+Solomon Islands,2001,0.3467
+Solomon Islands,2002,0.3503
 Solomon Islands,2003,0.354
 Solomon Islands,2004,0.415
 Solomon Islands,2005,0.516
 Solomon Islands,2006,0.34
 Solomon Islands,2007,0.583
-Solomon Islands,2008,0.316
+Solomon Islands,2008,0.3165
 Solomon Islands,2009,0.05
 Solomon Islands,2010,0.294
 Solomon Islands,2011,0.089
@@ -10400,8 +10400,8 @@ South Georgia and the South Sandwich Islands,1978,0.323
 South Georgia and the South Sandwich Islands,1979,0.308
 South Georgia and the South Sandwich Islands,1980,-0.311
 South Georgia and the South Sandwich Islands,1981,0.447
-South Georgia and the South Sandwich Islands,1982,0.216
-South Georgia and the South Sandwich Islands,1983,-0.014
+South Georgia and the South Sandwich Islands,1982,0.2163
+South Georgia and the South Sandwich Islands,1983,-0.0143
 South Georgia and the South Sandwich Islands,1984,-0.245
 South Georgia and the South Sandwich Islands,1985,0.089
 South Georgia and the South Sandwich Islands,1986,0.406
@@ -10422,7 +10422,7 @@ South Georgia and the South Sandwich Islands,2000,0.327
 South Georgia and the South Sandwich Islands,2001,0.451
 South Georgia and the South Sandwich Islands,2002,-0.664
 South Georgia and the South Sandwich Islands,2003,1.057
-South Georgia and the South Sandwich Islands,2004,0.57
+South Georgia and the South Sandwich Islands,2004,0.5705
 South Georgia and the South Sandwich Islands,2005,0.084
 South Georgia and the South Sandwich Islands,2006,0.708
 South Georgia and the South Sandwich Islands,2007,0.129
@@ -10974,7 +10974,7 @@ Timor-Leste,1961,-0.444
 Timor-Leste,1962,-0.081
 Timor-Leste,1963,-0.702
 Timor-Leste,1964,-0.242
-Timor-Leste,1965,-0.039
+Timor-Leste,1965,-0.0395
 Timor-Leste,1966,0.163
 Timor-Leste,1967,-0.28
 Timor-Leste,1968,0.114
@@ -10984,8 +10984,8 @@ Timor-Leste,1971,0.226
 Timor-Leste,1972,-0.068
 Timor-Leste,1973,0.756
 Timor-Leste,1974,-0.316
-Timor-Leste,1975,-0.068
-Timor-Leste,1976,0.179
+Timor-Leste,1975,-0.0683
+Timor-Leste,1976,0.1793
 Timor-Leste,1977,0.427
 Timor-Leste,1978,0.874
 Timor-Leste,1979,0.392
@@ -10996,9 +10996,9 @@ Timor-Leste,1983,0.427
 Timor-Leste,1984,0.158
 Timor-Leste,1985,0.577
 Timor-Leste,1986,0.205
-Timor-Leste,1987,-0.017
+Timor-Leste,1987,-0.0165
 Timor-Leste,1988,-0.238
-Timor-Leste,1989,-0.46
+Timor-Leste,1989,-0.4595
 Timor-Leste,1990,-0.681
 Timor-Leste,1991,-0.483
 Timor-Leste,1992,-0.285
@@ -11021,7 +11021,7 @@ Timor-Leste,2008,0.21
 Timor-Leste,2009,0.608
 Timor-Leste,2010,0.845
 Timor-Leste,2011,-0.067
-Timor-Leste,2012,0.2
+Timor-Leste,2012,0.2005
 Timor-Leste,2013,0.468
 Timor-Leste,2014,0.552
 Timor-Leste,2015,0.627
@@ -11396,10 +11396,10 @@ Turks and Caicos Islands,1963,0.045
 Turks and Caicos Islands,1964,0.254
 Turks and Caicos Islands,1965,-0.312
 Turks and Caicos Islands,1966,0.252
-Turks and Caicos Islands,1967,0.222
-Turks and Caicos Islands,1968,0.192
-Turks and Caicos Islands,1969,0.161
-Turks and Caicos Islands,1970,0.131
+Turks and Caicos Islands,1967,0.2218
+Turks and Caicos Islands,1968,0.1916
+Turks and Caicos Islands,1969,0.1614
+Turks and Caicos Islands,1970,0.1312
 Turks and Caicos Islands,1971,0.101
 Turks and Caicos Islands,1972,0.04
 Turks and Caicos Islands,1973,0.312
@@ -12320,12 +12320,12 @@ Yemen,1987,0.056
 Yemen,1988,0.998
 Yemen,1989,0.381
 Yemen,1990,0.474
-Yemen,1991,0.431
-Yemen,1992,0.387
-Yemen,1993,0.344
-Yemen,1994,0.301
-Yemen,1995,0.258
-Yemen,1996,0.214
+Yemen,1991,0.4307
+Yemen,1992,0.3874
+Yemen,1993,0.3441
+Yemen,1994,0.3009
+Yemen,1995,0.2576
+Yemen,1996,0.2143
 Yemen,1997,0.171
 Yemen,1998,0.171
 Yemen,1999,0.171

@@ -27,6 +27,9 @@ NOTE:
     The preprocessed versions of the sea ice and average temperature datasets which are used in this 
     script, can be created by prviously running the scripts in the root folder "PrepareAveTempSet.py" 
     and "PrepareSeaIceSet.py".
+    
+    For analysis purposes, a trimmed version of the dataset is being created, restricted to the range 
+    from 1979 - 2018 That way, the amount of missing data (sea ice data) is reduced drastically.
 
 """
 
@@ -45,9 +48,11 @@ ch4_combo = pd.merge(ch4_mean, ch4_growth, on='year', how='left')
 ch4_combo.rename(columns={'ann inc': 'ch4_growth'}, inplace=True)
 mask = (ch4_combo['year'] >= 1960) & (ch4_combo['year'] <= 1984)
 ch4_combo.loc[mask & ch4_combo['ch4_growth'].isna(), 'ch4_growth'] = round(
-    ch4_combo.loc[mask, "ch4_mean"].diff().shift(-1), 2
+    ch4_combo.loc[mask, "ch4_mean"].diff().shift(-1), 4
 )
-ch4_combo[['ch4_mean', 'ch4_growth']] = round(ch4_combo[['ch4_mean', 'ch4_growth']] / 10, 2)
+
+# convert ch4 values from ppb to ppm
+ch4_combo[['ch4_mean', 'ch4_growth']] = round(ch4_combo[['ch4_mean', 'ch4_growth']] / 1000, 4)
 
 mask = (ch4_combo['year'] >= 1961) & (ch4_combo['year'] <= 2020) # reduce data to 1961 - 2020
 ch4_combo = ch4_combo[mask]
@@ -63,7 +68,7 @@ co2_ch4_combo = pd.merge(co2_combo, ch4_combo, on='year', how='left')
 sea_ice.rename(columns={'Year' : 'year'}, inplace=True)
 co2_ch4_ice_combo = pd.merge(co2_ch4_combo, sea_ice, on='year', how='left')
 
-temp_change_set['absol_temp_c'] = round(temp_change_set['temp_change_c'] + 14, 3)
+temp_change_set['absol_temp_c'] = round(temp_change_set['temp_change_c'] + 14, 4)
 
 annual_data = pd.merge(temp_change_set, co2_ch4_ice_combo, on='year', how='left')
 

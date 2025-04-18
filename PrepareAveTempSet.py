@@ -91,8 +91,8 @@ incomplete_df.to_csv("data/preprocessed/removed_countries_monthly.csv", index=Fa
 temp_change_mon = pd.concat(complete_countries).reset_index(drop=True)
 
 # round temperature anomaly values to 3 decimal places
-temp_change_ann['Temp_Change_C'] = round(temp_change_ann['Temp_Change_C'], 3)
-temp_change_mon['Temp_Change_C'] = round(temp_change_mon['Temp_Change_C'], 3)
+temp_change_ann['Temp_Change_C'] = round(temp_change_ann['Temp_Change_C'], 4)
+temp_change_mon['Temp_Change_C'] = round(temp_change_mon['Temp_Change_C'], 4)
 
 # map to convert categorical month values to numerical
 month_name_map = {

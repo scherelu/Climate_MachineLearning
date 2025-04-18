@@ -1,9 +1,5 @@
 """
-This file is used to manipulate all of our datasets and to merge them into a comprehenseive one.
-The annual data set is already merged, the monthly dataset is still work in progress. Sadly I realized too late
-that we need to hand this in aswell. While I do have a record of how I manipulated the datafiles, I did not have
-time to reconstruct all of the python code that went into it. The methods how we attained our final datasets
-will of course be included in our final report for transparency.
+This file is used to manipulate all of our monthly datasets and to merge them into a comprehensive one.
 
 Original Datasets:
 
@@ -19,6 +15,9 @@ NOTE:
     The missing data betwen 1961 and 1984 in the ch4 annual mean dataset was manually completed using
     https://sealevel.info/co2_and_ch4.html ; Since the recorded values are only biyearly, interpolation 
     was used.
+    
+    For analysis purposes, a trimmed version is being created, restricted to the range from 1979 - 2018
+    That way, the amount of missing data is reduced drastically.
 
 """
 
@@ -48,7 +47,7 @@ co2_mean['co2_growth'] = (
     .groupby('month')['average']
     .diff()
     .shift(-1)
-    .round(2)
+    .round(4)
 )
 
 ch4_mean['ch4_growth'] = (
@@ -56,10 +55,11 @@ ch4_mean['ch4_growth'] = (
     .groupby('month')['average']
     .diff()
     .shift(-1)
-    .round(2)
+    .round(4)
 )
 
-ch4_mean[['average', 'trend','ch4_growth']] = round(ch4_mean[['average', 'trend','ch4_growth']] / 10, 2)
+# convert ch4 values from ppb to ppm
+ch4_mean[['average', 'trend','ch4_growth']] = round(ch4_mean[['average', 'trend','ch4_growth']] / 1000, 4)
 
 ch4_mean.rename(columns={'average': 'ch4_average', 'trend': 'ch4_trend'}, inplace=True)
 co2_mean.rename(columns={'average': 'co2_average', 'trend': 'c02_trend'}, inplace=True)
@@ -73,9 +73,11 @@ co2_ch4_ice_combo = pd.merge(co2_ch4_combo, ice_month, on=['year', 'month'], how
 co2_ch4_ice_combo = co2_ch4_ice_combo.sort_values(['month', 'year'])
 
 monthly_data = pd.merge(temp_set_month, co2_ch4_ice_combo, on=['year', 'month', 'month_cat'], how='left')
+monthly_data['decimal_date'] = round(monthly_data['year'] + (monthly_data['month'] - 1) / 12.0, 4)
+
 
 column_order = [
-    'country', 'year', 'month_cat', 'month', 'temp_change_c', 'co2_average', 'c02_trend',
+    'country', 'year', 'month_cat', 'month', 'decimal_date', 'temp_change_c', 'co2_average', 'c02_trend',
     'co2_growth', 'ch4_average', 'ch4_trend', 'ch4_growth', 'extent_north', 'extent_south',
     'extent_global', 'change_north', 'change_south', 'change_global'
 ]
