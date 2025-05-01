@@ -29,7 +29,7 @@ NOTE:
     and "PrepareSeaIceSet.py".
     
     For analysis purposes, a trimmed version of the dataset is being created, restricted to the range 
-    from 1979 - 2018 That way, the amount of missing data (sea ice data) is reduced drastically.
+    from 1979 - 2020 That way, the amount of missing data (sea ice data) is reduced drastically.
     
     - Author: Ludwig Scherer
     - Date: 04/15/2025
@@ -41,10 +41,12 @@ import pandas as pd
 temp_change_set = pd.read_csv("data/preprocessed/annual_clean.csv", header=0)
 ch4_mean = pd.read_csv("data/preprocessed/ch4_annmean_gl.csv", header=0)
 ch4_growth = pd.read_csv("data/original/NOAA/ch4_gr_gl.csv", header=45)
-co2_mean = pd.read_csv("data/preprocessed/co2_annmean_gl.csv", header=0)
-co2_growth = pd.read_csv("data/original/NOAA/co2_gr_gl.csv", header=43)
+co2_mean = pd.read_csv("data/original/NOAA/co2_annmean_mlo.csv", header=43)
+co2_growth = pd.read_csv("data/original/NOAA/co2_gr_mlo.csv", header=45)
 sea_ice = pd.read_csv("data/preprocessed/ice_annual.csv", header=0)
 
+
+co2_mean = co2_mean[['year', 'mean']]
 
 ch4_growth = ch4_growth[['year', 'ann inc']]
 ch4_combo = pd.merge(ch4_mean, ch4_growth, on='year', how='left')
@@ -57,13 +59,13 @@ ch4_combo.loc[mask & ch4_combo['ch4_growth'].isna(), 'ch4_growth'] = round(
 # convert ch4 values from ppb to ppm
 ch4_combo[['ch4_mean', 'ch4_growth']] = round(ch4_combo[['ch4_mean', 'ch4_growth']] / 1000, 4)
 
-mask = (ch4_combo['year'] >= 1961) & (ch4_combo['year'] <= 2020) # reduce data to 1961 - 2020
+mask = (ch4_combo['year'] >= 1961) & (ch4_combo['year'] <= 2024) # reduce data to 1961 - 2024
 ch4_combo = ch4_combo[mask]
 
 co2_growth = co2_growth[['year', 'ann inc']]
 co2_growth.rename(columns={'ann inc': 'co2_growth'}, inplace=True)
 co2_combo = pd.merge(co2_mean, co2_growth, on='year', how='left')
-mask = (co2_combo['year'] >= 1961) & (co2_combo['year'] <= 2020) # reduce data to 1961 - 2020
+mask = (co2_combo['year'] >= 1961) & (co2_combo['year'] <= 2024) # reduce data to 1961 - 2024
 co2_combo = co2_combo[mask]
 
 co2_ch4_combo = pd.merge(co2_combo, ch4_combo, on='year', how='left')
@@ -75,8 +77,13 @@ temp_change_set['absol_temp_c'] = round(temp_change_set['temp_change_c'] + 14, 4
 
 annual_data = pd.merge(temp_change_set, co2_ch4_ice_combo, on='year', how='left')
 
-mask = ((annual_data['year'] >= 1979) & (annual_data['year'] <= 2018))
+mask = ((annual_data['year'] >= 1979) & (annual_data['year'] <= 2020))
 annual_data_trim = annual_data[mask]
 
-annual_data.to_csv("data/annual/annual_data.csv", index=False)
-annual_data_trim.to_csv("data/annual/annual_data_trim.csv", index=False)
+unique_countries = annual_data['country'].unique()
+unique_countries = pd.DataFrame(unique_countries, columns=['countries'])
+
+# unique_countries.to_csv('unique_countries.csv', index=False)
+
+annual_data.to_csv("data/annual/annual_data_test.csv", index=False)
+annual_data_trim.to_csv("data/annual/annual_data_trim_test.csv", index=False)

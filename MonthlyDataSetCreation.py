@@ -62,7 +62,7 @@ ch4_mean['ch4_growth'] = (
 )
 
 # convert ch4 values from ppb to ppm
-ch4_mean[['average', 'trend','ch4_growth']] = round(ch4_mean[['average', 'trend','ch4_growth']] / 1000, 4)
+ch4_mean[['average', 'trend','ch4_growth']] = ch4_mean[['average', 'trend','ch4_growth']] / 1000
 
 ch4_mean.rename(columns={'average': 'ch4_average', 'trend': 'ch4_trend'}, inplace=True)
 co2_mean.rename(columns={'average': 'co2_average', 'trend': 'c02_trend'}, inplace=True)
@@ -76,19 +76,30 @@ co2_ch4_ice_combo = pd.merge(co2_ch4_combo, ice_month, on=['year', 'month'], how
 co2_ch4_ice_combo = co2_ch4_ice_combo.sort_values(['month', 'year'])
 
 monthly_data = pd.merge(temp_set_month, co2_ch4_ice_combo, on=['year', 'month', 'month_cat'], how='left')
-monthly_data['decimal_date'] = round(monthly_data['year'] + (monthly_data['month'] - 1) / 12.0, 4)
+monthly_data['decimal_date'] = monthly_data['year'] + (monthly_data['month'] - 1) / 12.0
 
 
 column_order = [
-    'country', 'year', 'month_cat', 'month', 'decimal_date', 'temp_change_c', 'co2_average', 'c02_trend',
-    'co2_growth', 'ch4_average', 'ch4_trend', 'ch4_growth', 'extent_north', 'extent_south',
-    'extent_global', 'change_north', 'change_south', 'change_global'
+    'country', 'hemisphere', 'year', 'month_cat', 'month', 'decimal_date', 'temp_change_c', 'co2_average', 'c02_trend',
+    'co2_growth', 'ch4_average', 'ch4_trend', 'ch4_growth', 'extent_north', 'area_north', 'extent_south',
+    'area_south', 'extent_global', 'area_global', 'extent_change_north', 'extent_change_south',
+    'area_change_north', 'area_change_south', 'extent_change_global', 'area_change_global'
 ]
 
 monthly_data = monthly_data[column_order]
 
-mask = ((monthly_data['year'] >= 1979) & (monthly_data['year'] <= 2018))
+
+features_to_extrapolate = ['ch4_average', 'ch4_trend', 'ch4_growth']
+
+monthly_data[features_to_extrapolate] = monthly_data[features_to_extrapolate].interpolate(
+    method='linear',
+    limit_direction='both'
+)
+
+monthly_data = round(monthly_data, 4)
+
+mask = ((monthly_data['year'] >= 1979) & (monthly_data['year'] <= 2020))
 monthly_data_trim = monthly_data[mask]
 
-monthly_data.to_csv("data/monthly/monthly_data.csv", index=False)
-monthly_data_trim.to_csv("data/monthly/monthly_data_trim.csv", index=False)
+monthly_data.to_csv("data/monthly/monthly_data_test.csv", index=False)
+monthly_data_trim.to_csv("data/monthly/monthly_data_trim_test.csv", index=False)
