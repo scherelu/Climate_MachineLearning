@@ -4,7 +4,7 @@
 
 ### Original datasets:
 
-    sea_ice: https://www.kaggle.com/datasets/nsidcorg/daily-sea-ice-extent-data
+    ALL SEA ICE DATASETS: https://noaadata.apps.nsidc.org/NOAA/G02135/
     ave_temp_change: https://www.kaggle.com/datasets/sevgisarac/temperature-change
     co2 monthly mean: https://gml.noaa.gov/webdata/ccgg/trends/co2/co2_mm_gl.csv
     co2 annual mean:https://gml.noaa.gov/webdata/ccgg/trends/co2/co2_annmean_gl.csv

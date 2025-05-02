@@ -47,6 +47,8 @@ sea_ice = pd.read_csv("data/preprocessed/ice_annual.csv", header=0)
 
 
 co2_mean = co2_mean[['year', 'mean']]
+co2_mean.rename(columns={'mean': 'co2_mean'}, inplace=True)
+
 
 ch4_growth = ch4_growth[['year', 'ann inc']]
 ch4_combo = pd.merge(ch4_mean, ch4_growth, on='year', how='left')
@@ -85,5 +87,5 @@ unique_countries = pd.DataFrame(unique_countries, columns=['countries'])
 
 # unique_countries.to_csv('unique_countries.csv', index=False)
 
-annual_data.to_csv("data/annual/annual_data_test.csv", index=False)
-annual_data_trim.to_csv("data/annual/annual_data_trim_test.csv", index=False)
+annual_data.to_csv("data/annual/annual_data.csv", index=False)
+annual_data_trim.to_csv("data/annual/annual_data_trim.csv", index=False)

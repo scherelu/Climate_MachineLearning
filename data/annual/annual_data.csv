@@ -1,4 +1,4 @@
-country,year,temp_change_c,hemisphere,absol_temp_c,mean,co2_growth,ch4_mean,ch4_growth,extent_north,extent_south,extent_global,area_north,area_south,area_global,extent_change_north,extent_change_south,extent_change_global,area_change_north,area_change_south,area_change_global
+country,year,temp_change_c,hemisphere,absol_temp_c,co2_mean,co2_growth,ch4_mean,ch4_growth,extent_north,extent_south,extent_global,area_north,area_south,area_global,extent_change_north,extent_change_south,extent_change_global,area_change_north,area_change_south,area_change_global
 Afghanistan,1961,-0.121,north,13.879,317.64,0.96,1.2598,0.0124,,,,,,,,,,,,
 Afghanistan,1962,-0.171,north,13.829,318.45,0.65,1.2722,0.0131,,,,,,,,,,,,
 Afghanistan,1963,0.841,north,14.841,318.99,0.71,1.2853,0.0131,,,,,,,,,,,,
