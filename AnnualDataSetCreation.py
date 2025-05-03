@@ -82,10 +82,20 @@ annual_data = pd.merge(temp_change_set, co2_ch4_ice_combo, on='year', how='left'
 mask = ((annual_data['year'] >= 1979) & (annual_data['year'] <= 2020))
 annual_data_trim = annual_data[mask]
 
-unique_countries = annual_data['country'].unique()
+unique_countries = annual_data_trim['country'].unique()
+unique_countries_count = len(unique_countries)
 unique_countries = pd.DataFrame(unique_countries, columns=['countries'])
+
+northern_count = (annual_data_trim['hemisphere'] == 'north').sum() / len(range(1979, 2021))
+southern_count = (annual_data_trim['hemisphere'] == 'south').sum() / len(range(1979, 2021))
+
+nan_count = annual_data_trim.isna().sum()
+
+print(
+    f"NaN value count: \n{nan_count}, Unique countries: {unique_countries_count}, \n"
+    f"Northern: {northern_count}, Southern: {southern_count}")
 
 # unique_countries.to_csv('unique_countries.csv', index=False)
 
-annual_data.to_csv("data/annual/annual_data.csv", index=False)
-annual_data_trim.to_csv("data/annual/annual_data_trim.csv", index=False)
+# annual_data.to_csv("data/annual/annual_data.csv", index=False)
+# annual_data_trim.to_csv("data/annual/annual_data_trim.csv", index=False)
