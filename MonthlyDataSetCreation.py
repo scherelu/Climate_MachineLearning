@@ -3,7 +3,7 @@ This file is used to manipulate all of our monthly datasets and to merge them in
 
 Original Datasets:
 
-    sea_ice: https://www.kaggle.com/datasets/nsidcorg/daily-sea-ice-extent-data
+    ALL SEA ICE DATASETS: https://noaadata.apps.nsidc.org/NOAA/G02135/
     ave_temp_change: https://www.kaggle.com/datasets/sevgisarac/temperature-change
     co2 monthly mean: https://gml.noaa.gov/webdata/ccgg/trends/co2/co2_mm_gl.csv
     ch4 monthly mean: https://gml.noaa.gov/webdata/ccgg/trends/ch4/ch4_mm_gl.csv
