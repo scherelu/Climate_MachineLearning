@@ -15,9 +15,18 @@
 
 ### Description:
 
-    The idea is to essentially gather two types of data sets: growthrate, and absolute value. For each of the features we are considering (Temperature, Sea Ice, CO2, CH4 so far) we want to acquire the data both as a monthly and as an annual version, to allow for in depth analysis and detection of trends and patterns both longterm and seasonal.
+    The idea is to essentially gather two types of data: growthrate, and absolute value. For each of the features we are considering (Temperature, Sea Ice, CO2, CH4) we want to acquire the data both as a monthly and as an annual version, to allow for in depth analysis and detection of trends and patterns both longterm and seasonal.
 
-    We are currently in the first phases of solving the task of successfully predicting climate trends. Right now we are focussing on temperature prediction based on the annual dataset. We plan on expanding and refining our approach using the monthly dataset as well. Additionally, we intent to fill in the missing data for the most recent years (hopefully we will have complete data until 2024), as well as engineering / adding more features. For example the categorical feature of 'Hemisphere' for each country, which might allow some interesting classification approaches to try and train models which can successfully predict the hemisphere a country is located in based on the data it is given. 
+    As mentioned, the aim of the scripts in this codebase is to uncover trends and connections within our
+    datasets. We targeted both the 'hemisphere' feature with the VotingClassifier.py script, and the temp_change_c feature using the VotingRegressor.py script.
+
+    If you want to reconstruct the datasets, you need to run the following scripts in this order:
+        1. PrepareAveTempSet.py
+        2. PrepareSeaIceSet.py
+        3. MonthlyDataSetCreation.py
+        4. AnnualDataSetCreation.py
+
+    This is because some scripts depend on datasets created by one of the others. However, all datasets are already created and in the 'data' directory. So there shouldn't be any issues regarding this. 
 
 ### Contents:
 
@@ -43,10 +52,16 @@
             |--- edaScript.py
         
         - models
+            |--- optimizing
+                |--- SCRIPTS USED FOR HYPERPARAMETER TUNING
             |--- plots
                 |--- PLOTS OF MODEL RUNS
             |--- forest_climate.py
             |--- linear_regression_climate.py
+            |--- randomF.py
+            |--- VotingClassifier_Hem.py
+            |--- VotingRegressor_Temp.py
+            |--- xboost.py
         
         - visualizations
             |--- annual
@@ -64,6 +79,7 @@
 ### SYSTEM REQUIREMENTS:
 
     - Python 3.10.x (3.10 or higher)
+
 ### Usage:    
 
     Extract this directory into a directory of your choice where you would like to work with this
