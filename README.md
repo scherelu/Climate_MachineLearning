@@ -18,7 +18,10 @@
     The idea is to essentially gather two types of data: growthrate, and absolute value. For each of the features we are considering (Temperature, Sea Ice, CO2, CH4) we want to acquire the data both as a monthly and as an annual version, to allow for in depth analysis and detection of trends and patterns both longterm and seasonal.
 
     As mentioned, the aim of the scripts in this codebase is to uncover trends and connections within our
-    datasets. We targeted both the 'hemisphere' feature with the VotingClassifier.py script, and the temp_change_c feature using the VotingRegressor.py script.
+    datasets. We targeted both the 'hemisphere' feature with the VotingClassifier.py script, and the temp_change_c feature using the VotingRegressor_Temp_Ann.py script. Another interesting analysis was
+    conducted using the VotingRegressor_Temp_Mon.py script, where we configured the model to predict the
+    evolution of a countries' temperature change individually, and then rank the countries based on these
+    predictions into a top and bottom 10.
 
     If you want to reconstruct the datasets, you need to run the following scripts in this order:
         1. PrepareAveTempSet.py
@@ -65,7 +68,8 @@
             |--- linear_regression_climate.py
             |--- randomF.py
             |--- VotingClassifier_Hem.py
-            |--- VotingRegressor_Temp.py
+            |--- VotingRegressor_Temp_Ann.py
+            |--- VotingRegressor_Temp_Mon.py
             |--- xboost.py
         
         - visualizations
