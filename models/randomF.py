@@ -5,21 +5,12 @@ from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.metrics import mean_squared_error, r2_score
 import matplotlib.pyplot as plt
-import seaborn as sns
 
 #loading the datasets
 annual_df = pd.read_csv("./data/annual/annual_data_trim.csv")
 monthly_df = pd.read_csv("./data/monthly/monthly_data_trim.csv")
 print("Monthly dataset columns:", monthly_df.columns.tolist())
 
-
-
-# Feature Selections for predicting temperature changes
-    # - 'year': captures temporal trend; climate change is strongly time-dependent.
-    # - 'co2_mean' and 'co2_growth': CO₂ is the dominant greenhouse gas influencing global warming.
-    # - 'ch4_mean' and 'ch4_growth': Methane (CH4) is a potent greenhouse gas affecting short-term warming.
-    # - 'extent_global' and 'extent_change_global': Sea ice extent reflects Earth's albedo; melting ice accelerates warming.
-    # - 'area_global' and 'area_change_global': Sea ice area gives a more accurate measure of coverage than extent.
 features = [
     'year', 'co2_mean', 'co2_growth',
     'ch4_mean', 'ch4_growth',

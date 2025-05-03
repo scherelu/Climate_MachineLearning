@@ -1,6 +1,6 @@
 """
 This script implements the voting classifier ensemble method offered by the scikit-learn library to
-analyze the annual data set
+analyze the annual data set and determine the models performance including hyperparameter tuning
 
     - Author: Ludwig Scherer
     - Date: 05/01/2025

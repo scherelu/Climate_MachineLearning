@@ -1,8 +1,14 @@
+"""
+This script implements both the stacking and voting regressor ensemble methods offered by the scikit-learn 
+library to analyze the annual data set and determine the models' performance against eachother including 
+hyperparameter tuning
 
+    - Author: Ludwig Scherer
+    - Date: 05/01/2025
+"""
 
 from sklearn.ensemble import RandomForestRegressor, GradientBoostingRegressor, VotingRegressor, StackingRegressor
 from xgboost import XGBRegressor
-from sklearn.linear_model import Ridge
 from sklearn.utils import shuffle
 import pandas as pd
 import numpy as np

@@ -1,19 +1,15 @@
 import pandas as pd
-import numpy as np
 import time
 from sklearn.model_selection import train_test_split
-from sklearn.ensemble import RandomForestRegressor
 import xgboost as xgb
 from sklearn.metrics import mean_squared_error, r2_score
-import matplotlib.pyplot as plt
-import seaborn as sns
 
 #loading the datasets
 annual_df = pd.read_csv("./data/annual/annual_data_trim.csv")
 monthly_df = pd.read_csv("./data/monthly/monthly_data_trim.csv")
 
 # Import plotting functions and features from randomF.py
-from randomF import plot_actual_vs_predicted, plot_feature_importance, features  # Import 'features' too
+from models.randomF import plot_actual_vs_predicted, plot_feature_importance, features  # Import 'features' too
 
 
 ### Annual Data Model##
