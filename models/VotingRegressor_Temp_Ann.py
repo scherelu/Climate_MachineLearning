@@ -1,6 +1,6 @@
 """
 This script implements the VotingRegressor ensemble method offered by scikit-learn
-to analyze the annual climate dataset and visualize its performance.
+to analyze the annual climate dataset and visualize the results.
 
 - Author: Ludwig Scherer
 - Date: 05/02/2025

@@ -26,7 +26,12 @@
         3. MonthlyDataSetCreation.py
         4. AnnualDataSetCreation.py
 
-    This is because some scripts depend on datasets created by one of the others. However, all datasets are already created and in the 'data' directory. So there shouldn't be any issues regarding this. 
+    This is because some scripts depend on datasets created by one of the others. However, all datasets are already created and in the 'data' directory. So there shouldn't be any issues regarding this.
+
+    Note that the primary datasets chosen for anlysis, were the 'annual_data_trim.csv' inside 'data/annual/',
+    and the 'monthly_data_trim.csv' located under 'data/monthly/', as both of them do not have any missing
+    data entries. That way we have a complete dataset covering the period from 1979 until 2020 (inclusive),
+    both for monthly and annual data. 
 
 ### Contents:
 
